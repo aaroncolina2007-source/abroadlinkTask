@@ -1,11 +1,6 @@
 <?php
-$servidor = "localhost";
-$usuario = "root";
-$clave = "";
-$BaseDeDatos = "gestion";
+require_once 'conexion.php';
 
-// Conexión
-$enlace = mysqli_connect($servidor, $usuario, $clave, $BaseDeDatos);
 
 // Eliminar cliente si se envió el formulario
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['id_cliente'])) {
@@ -151,7 +146,7 @@ $result = mysqli_query($enlace, "SELECT ID_CLIENTE, DNI, NOMBRE FROM clientes");
     <br><br>
     <input type="submit" value="Eliminar Cliente" 
            onclick="return confirm('¿Estás seguro de eliminar este cliente?');"><br><br><br>
-           <a href="index.php" class="regresar">si quieres volver a la pagina anterior haz click aqui y sigue añadiendo clientes</a>
+           <a href="index.php" class="regresar">si deseas volver al inicio haz click aqui</a>
 </form>
 
 </div>
